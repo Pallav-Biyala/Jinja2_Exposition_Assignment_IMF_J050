@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IITian Student Information</title>
+        <style type="text/css">
+            body { background-color: #330033; }
+            p { font-family: 'Baskerville Old Face'; font-size: 18px; color: #9966cc; }
+            h1 { font-family: 'Baskerville Old Face'; font-size: 20px; color: #9966cc; text-align: center; }
+            ol { font-family: 'Baskerville Old Face'; font-size: 18px; color: #9966cc; }
+            a.button-link { 
+                background-color: green; 
+                color: white; 
+                padding: 10px 20px; 
+                text-decoration: none; 
+                border-radius: 5px; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>IITian's Student Information</h1>
+        <form>
+            <ol>
+                <li>Name: {{ name }}</li>
+                <li>Your Stream:<br>
+                    {% for stream in streams %}
+                        <input type="radio" name="stream" value="{{ stream }}"> {{ stream }}<br>
+                    {% endfor %}
+                </li>
+                <li>IIT Name:<br>
+                    <select name="iit_name">
+                        {% for iit in iit_list %}
+                            <option value="{{ iit }}">{{ iit }}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+            </ol>
+        </form>
+    </body>
+</html>

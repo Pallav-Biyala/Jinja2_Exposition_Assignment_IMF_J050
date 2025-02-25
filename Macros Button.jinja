@@ -1,0 +1,6 @@
+{% macro button(text="Click Me", color="blue") %}
+    <button style="background-color: {{ color }};">{{ text }}</button>
+{% endmacro %}
+
+{{ button() }}
+{{ button("Submit", "green") }}
